@@ -232,7 +232,7 @@ body {
   background-color: var(--color-gray);
   text-decoration: none;
   color: var(--color-dark-gray);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
 }
 
@@ -252,11 +252,24 @@ body {
   font-size: 24px;
 }
 
-.header__navigation {
+.buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 16px;
+  column-gap: 12px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 32px;
+}
+
+.controls__log {
+  line-height: 20pt;
+  padding: 0;
+  margin: 0;
 }
 
 .wide-block {
@@ -274,23 +287,6 @@ TEXTAREA.program {
 
 .program {
   overflow-y: auto;
-}
-
-.controls {
-  white-space: nowrap;
-  padding: 5pt 0;
-  height: 18pt;
-}
-
-.controls .log {
-  line-height: 20pt;
-  padding: 0;
-  margin: 0;
-}
-
-.controls .button {
-  float: right;
-  margin-left: 5pt;
 }
 
 .placeholder-active {

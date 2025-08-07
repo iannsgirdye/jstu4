@@ -14,7 +14,7 @@
   <body>
     <header class="header">
       <h1 class="header__title title"></h1>
-      <nav class="header__navigation">
+      <nav class="header__navigation buttons">
         <a class="header__button button" id="btn-help" href="#"></a>
         <a class="header__button button" id="btn-change-language" href="#"></a>
       </nav>
@@ -25,13 +25,15 @@
         <div class="wide-block mode-run tape" id="display-tape"></div>
       </section>
       <section class="controls">
-        <a class="button mode-edit" id="btn-start" href="#"></a>
-        <a class="button mode-edit" id="btn-totu4" href="#"></a>
-        <a class="button mode-run" id="btn-step" href="#"></a>
-        <a class="button mode-run" id="btn-quick" href="#"></a>
-        <a class="button mode-run mode-error" id="btn-edit" href="#"></a>
-        <a class="button mode-run" id="btn-unmark" href="#"></a>
-        <span id="log"></span>
+        <span class="controls__log" id="log"></span>
+        <div class="controls__buttons buttons">
+          <a class="controls__button button mode-edit" id="btn-start" href="#"></a>
+          <a class="controls__button button mode-edit" id="btn-totu4" href="#"></a>
+          <a class="controls__button button mode-run" id="btn-step" href="#"></a>
+          <a class="controls__button button mode-run" id="btn-quick" href="#"></a>
+          <a class="controls__button button mode-run mode-error" id="btn-edit" href="#"></a>
+          <a class="controls__button button mode-run" id="btn-unmark" href="#"></a>
+        </div>
       </section>
       <section>
         <div id="stats">&nbsp;</div>
