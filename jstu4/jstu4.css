@@ -2,8 +2,7 @@
 HTML { height: 100%; }
 BODY { height: 100%; overflow: hidden; background-color: #FFF; }
 
-.wrapper {
-    padding: 5pt;
+body {
     height: 100%;
     max-width: 800px;
     margin: 0 auto;
