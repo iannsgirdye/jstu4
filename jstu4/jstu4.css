@@ -240,6 +240,13 @@ body {
   background-color: var(--color-ligth-gray);
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 12px;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -250,13 +257,6 @@ body {
 .header__title {
   font-weight: normal;
   font-size: 24px;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 12px;
 }
 
 .controls {
