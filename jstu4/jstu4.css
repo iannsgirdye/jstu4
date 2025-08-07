@@ -213,7 +213,6 @@ svg * {
 }
 
 html {
-  height: 100%;
   font-family: Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -228,18 +227,17 @@ body {
 }
 
 .button {
-  padding: 2px 4px;
-  border: 1px solid #666;
-  background-color: #DDD;
+  padding: 0.25em 0.5em;
+  border: 1px solid var(--color-dark-gray);
+  background-color: var(--color-gray);
   text-decoration: none;
-  font-size: 10pt;
-  font-family: sans-serif;
-  color: #666;
-  line-height: 14pt;
+  color: var(--color-dark-gray);
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .button:hover {
-  background-color: #EEE;
+  background-color: var(--color-ligth-gray);
 }
 
 .header {
@@ -259,11 +257,6 @@ body {
   justify-content: center;
   align-items: center;
   column-gap: 16px;
-}
-
-.header__button {
-  line-height: inherit;
-  font-size: inherit;
 }
 
 .wide-block {
