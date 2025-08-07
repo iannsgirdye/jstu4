@@ -216,6 +216,44 @@ body {
   background-color: #FFF;
 }
 
+.button {
+  padding: 2px 4px;
+  border: 1px solid #666;
+  background-color: #DDD;
+  text-decoration: none;
+  font-size: 10pt;
+  font-family: sans-serif;
+  color: #666;
+  line-height: 14pt;
+}
+
+.button:hover {
+  background-color: #EEE;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  column-gap: 24px;
+  padding-block: 24px;
+}
+
+.header__title {
+  font-weight: normal;
+  font-size: 24px;
+}
+
+.header__navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.header__button {
+  line-height: inherit;
+  font-size: inherit;
+}
 
 .wide-block {
   width: 100%;
@@ -251,36 +289,8 @@ TEXTAREA.program {
   margin-left: 5pt;
 }
 
-A.button {
-  padding: 2px 4px;
-  border: 1px solid #666;
-  background-color: #DDD;
-  text-decoration: none;
-  font-size: 10pt;
-  font-family: sans-serif;
-  color: #666;
-  line-height: 14pt;
-}
-
-A.button:hover {
-  background-color: #EEE;
-}
-
 .placeholder-active {
   color: #BBB;
-}
-
-H1 {
-  font-weight: normal;
-  margin: 7pt 0 10pt 0;
-  font-size: 18pt;
-  text-align: center;
-}
-
-H1 .button {
-  line-height: inherit;
-  font-size: inherit;
-  margin-left: 12pt;
 }
 
 #display-program {
