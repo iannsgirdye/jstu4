@@ -20,17 +20,7 @@ constructTemplateModel = function(values) {
     }, values);
 },
 
-/** Maximize the height of TEXTAREA.program and DIV.program */
-deferredResizeProgramBlocks = function() {
-    setTimeout(function() {
-        $('.program').each(function() {
-            var p = this.parentNode,
-                m = parseFloat($(p).css('padding-bottom').replace('px', ''));
-            $(this).css('height',
-                (p.clientHeight - this.offsetTop + p.offsetTop - m) + 'px');
-        });
-    }, 0);
-},
+
 
 /** TMRun instance of the currently running TM */
 tmRun,
@@ -73,8 +63,6 @@ setUIMode = function(mode) {
     });
 
     curUIMode = mode;
-
-    deferredResizeProgramBlocks();
 
     // every time we switch mode we also stop the quick run
     leaveQuickMode();
@@ -440,12 +428,7 @@ $(function() {
         }
     }
 
-    // resize program textarea
-    deferredResizeProgramBlocks();
-
     // bind events
-
-    $(window).resize(deferredResizeProgramBlocks);
 
     $('#btn-change-language').click(function() {
         doChangeLanguage();

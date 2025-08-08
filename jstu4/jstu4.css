@@ -239,6 +239,7 @@ body {
 }
 
 main {
+  min-height: 0;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -290,6 +291,7 @@ main {
   padding: 0.3em;
   line-height: 1.2;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 textarea.input {
@@ -311,12 +313,9 @@ textarea.input {
   font-size: 24px;
 }
 
-.code__input-wrapper {
-  flex-grow: 1;
-}
-
 .code {
   flex-grow: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   row-gap: 6px;
@@ -351,9 +350,16 @@ textarea.input {
   color: var(--color-light-black);
 }
 
+.code__input-wrapper {
+  min-height: 0;
+  flex-grow: 1;
+  height: 100%;
+}
+
 .code__input,
 .code__result {
   height: 100%;
+  width: 100%;
 }
 
 .code__result {
