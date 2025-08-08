@@ -20,25 +20,30 @@
       </nav>
     </header>
     <main>
-      <section>
-        <input class="wide-block mode-edit mode-error tape" id="input-tape" tabindex="1"/>
-        <div class="wide-block mode-run tape" id="display-tape"></div>
-      </section>
-      <section class="controls">
-        <span class="controls__log" id="log"></span>
-        <div class="controls__buttons buttons">
-          <a class="controls__button button mode-edit" id="btn-start" href="#"></a>
-          <a class="controls__button button mode-edit" id="btn-totu4" href="#"></a>
-          <a class="controls__button button mode-run" id="btn-step" href="#"></a>
-          <a class="controls__button button mode-run" id="btn-quick" href="#"></a>
-          <a class="controls__button button mode-run mode-error" id="btn-edit" href="#"></a>
-          <a class="controls__button button mode-run" id="btn-unmark" href="#"></a>
+      <section class="line">
+        <div class="line__input-wrapper input-wrapper">
+          <input class="line__input input mode-edit mode-error tape" id="input-tape" tabindex="1"/>
+          <div class="line__result input mode-run tape" id="display-tape"></div>
         </div>
       </section>
-      <section>
-        <div id="stats">&nbsp;</div>
-        <textarea class="wide-block mode-edit program" id="input-program" tabindex="2"></textarea>
-        <div class="wide-block mode-run mode-error program" id="display-program"></div>
+      <section class="code">
+        <div class="code__controls">
+          <span class="code__controls-log" id="log"></span>
+          <div class="code__controls-buttons buttons">
+            <a class="code__controls-button button mode-edit" id="btn-start" href="#"></a>
+            <a class="code__controls-button button mode-edit" id="btn-totu4" href="#"></a>
+            <a class="code__controls-button button mode-run" id="btn-step" href="#"></a>
+            <a class="code__controls-button button mode-run" id="btn-quick" href="#"></a>
+            <a class="code__controls-button button mode-run mode-error" id="btn-edit" href="#"></a>
+            <a class="code__controls-button button mode-run" id="btn-unmark" href="#"></a>
+          </div>
+        </div>
+        <div class="code__stats" id="stats"></div>
+        <div class="code__input-wrapper input-wrapper">
+          <textarea class="code__input input mode-edit" id="input-program" tabindex="2"></textarea>
+          <div class="code__result input mode-run mode-error program" id="display-program"></div>
+        </div>
       </section>
-    </body>
+    </main>
+  </body>
 </html>
