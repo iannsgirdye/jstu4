@@ -150,3 +150,10 @@ kbd:hover {
   font-size: 14px;
   margin: -36px 0 -56px -184px;
 }
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
