@@ -73,6 +73,10 @@ h3 {
   transform: scale(0.95);
 }
 
+.button:disabled {
+  transform: none;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -87,4 +91,28 @@ h3 {
 .header__title {
   font-weight: 700;
   font-size: 24px;
+}
+
+.emulator-commands__list > li:not(:last-child),
+.hot-keys__list > li:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+.hot-keys__list {
+  line-height: 1.2;
+}
+
+kbd {
+  display: inline-block;
+  border: 2px solid var(--color-dark-gray);
+  border-radius: 0.25em;
+  box-shadow: 0px 3px 0px var(--color-light-black);
+  margin-bottom: 3px;
+  padding: 0.25em;
+  cursor: default;
+}
+
+kbd:hover {
+  box-shadow: none;
+  transform: translateY(3px);
 }
