@@ -130,3 +130,23 @@ kbd:hover {
   box-shadow: none;
   transform: translateY(1.5px);
 }
+
+.example-code {
+  margin-top: 0.5em;
+  border: 6px solid var(--color-ligth-gray);
+  border-radius: 0.5em;
+}
+
+.example-code__header {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  height: 24px;
+  background-color: var(--color-ligth-gray);
+}
+
+.example-code__body {
+  padding: 0.5em;
+  font-size: 14px;
+  margin: -36px 0 -56px -184px;
+}
