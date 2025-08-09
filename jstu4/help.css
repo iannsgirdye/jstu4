@@ -93,6 +93,18 @@ h3 {
   font-size: 24px;
 }
 
+ul {
+  padding-left: 1em;
+}
+
+li {
+  margin-left: 0.5em;
+}
+
+li::marker {
+  content: "⨠  ";
+}
+
 .emulator-commands__list > li:not(:last-child),
 .hot-keys__list > li:not(:last-child) {
   margin-bottom: 0.5em;
