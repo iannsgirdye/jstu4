@@ -41,86 +41,128 @@
           </div>
         </article>
       </section>
-      <section>
-        <h2>Справка</h2>
-        <article>
-          Формат команды: <code>q,a,v,q'</code>
-          <ul>
-            <li><code>q</code> - текущее состояние;</li>
-            <li><code>a</code> - знак, который видим на ленте;</li>
-            <li><code>v</code> - знак, который пишем или команда;</li>
-            <li><code>q</code>' - состояние, в которое переходим.</li>
-          </ul>
-        </article>
-        <article>
-          Возможные команды МТ:
-          <ul>
-            <li><code>&gt;</code> - движение головки вправо;</li>
-            <li><code>&lt;</code> - движение головки влево;</li>
-            <li><code>=</code> - отсутствие движения на данном такте;</li>
-            <li><code>#</code> - полная остановка машины.</li>
-          </ul>
-        </article>
-        <article>
-          <p>Можно записывать несколько команд в строку, разделяя их одним или несколькими пробелами.</p>
-        </article>
-        <article>
-          <p>
-            В программу могут быть добавлены комментарии в стиле Си (//)  или shell (#). 
-            Обратите внимание: между предыдущей командой и коментарием должен стоять хотя бы один пробел или перенос строки.
-          </p>
-        </article>
-        <article>
-          <p>
-            Поддерживаются именованные состояния, но имена состояний, состоящие из одних цифр, считаются целыми числами 
-            (т.е. <code>01</code> и <code>1</code> - это одно и то же). Начальное состояние должно иметь имя 0.
-          </p>
-        </article>
-        <article>
-          <p>
-            В процессе работы выполненые команды помечаются цветом. 
-            Сбросить пометки можно в любой момент нажав кнопку "Сбросить метки"
-          </p>
-        </article>
-        <article>
-          <p>Лента ограничена слева, умолчального пробельного символа не предполагается, старайтесь не забывать его ставить</p>
-        </article>
-        <article>
-          Команды эмулятора:
-          <ul>
-            <li>"Старт" - разбирает программу и запускает её на выполнение;</li>
-            <li>"Быстро" - запустить программу в быстром, автоматическом режиме. Повторный клик ещё ускоряет работу;</li>
-            <li>"Шаг" - выполнить следующий шаг, при необходимости выйдя из быстрого режима;</li>
-            <li>"Вернуться к правке" - вернуться к редактированию программы и ленты;</li>
-            <li>
-              "В формат TU4" - преобразовать программу в формат эмулятора tu4
-              (все имена состояний заменить на шестнадцатеричные числа <code>0x00</code> - <code>0xFF</code>).
-            </li>
-          </ul>
-        </article>
-        <article>
-          Горячие клавиши:
-          <ul>
-            <li>
-              <kbd>Ctrl</kbd> + <kbd>Enter</kbd> в режиме правки - запуск программы на выполнение
-              (также можно просто нажать <kbd>Enter</kbd>, если в данный момент в фокусе находится поле ввода ленты);
-            </li>
-            <li><kbd>Enter</kbd> или <kbd>Ctrl</kbd> + <kbd>Enter</kbd> в режиме выполнения - включить/выключить быстрый режим;</li>
-            <li>Пробел в режиме выполнения - выполнить один шаг, при необходимости выйдя из быстрого режима;</li>
-            <li><kbd>Esc</kbd> в режиме выполнения - вернуться к редактированию программы и ленты;</li>
-          </ul>
-        </article>
-        <article>
-          Пример (ненормированная замена <code>0</code> на <code>1</code> и наоборот):
-          <pre>
-            <code>
-              00, ,&lt;,rep
-              rep,0,1,mov  rep,1,0,mov  rep, ,&gt;,fin  # переписываем текущую ячейку
-              mov,0,&lt;,rep  mov,1,&lt;,rep               // двигаемся на шаг влево
-              fin,0,&gt;,fin  fin,1,&gt;,fin  fin, ,#,fin  # в конце работы перемещаемся в конец слова
-            </code>
-          </pre>
-        </article>
+      <section class="wiki">
+        <h2 class="wiki__title">Справка</h2>
+        <div class="wiki__content">
+          <article class="command-format">
+            <h3 class="command-format__title">Формат команды</h3>
+            <div class="command-format__content">
+              <code>q,a,v,q'</code>, где:
+              <ul class="command-format__list">
+                <li class="command-format__item"><code>q</code> — текущее состояние;</li>
+                <li class="command-format__item"><code>a</code> — знак, который видим на ленте;</li>
+                <li class="command-format__item"><code>v</code> — знак, который пишем или команда;</li>
+                <li class="command-format__item"><code>q'</code> — состояние, в которое переходим.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="commands-variants">
+            <h3 class="commands-variants__title">Возможные команды МТ</h3>
+            <div class="commands-variants__content">
+              <ul class="commands-variants__list">
+                <li class="commands-variants__item"><code>&gt;</code> — движение головки вправо;</li>
+                <li class="commands-variants__item"><code>&lt;</code> — движение головки влево;</li>
+                <li class="commands-variants__item"><code>=</code> — отсутствие движения на данном такте;</li>
+                <li class="commands-variants__item"><code>#</code> — полная остановка машины.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="some-commands">
+            <h3 class="some-commands__title">Несколько команд в строке</h3>
+            <p class="some-commands__content">
+              Можно записывать несколько команд в строку, разделяя их одним или несколькими пробелами.
+            </p>
+          </article>
+          <article class="comments">
+            <h3 class="comments__title">Комментарии</h3>
+            <p class="comments__content">
+              В программу могут быть добавлены комментарии в стиле Си (<code>//</code>)  или shell (<code>#</code>). 
+              Обратите внимание: между предыдущей командой и коментарием должен стоять хотя бы один пробел или перенос строки.
+            </p>
+          </article>
+          <article class="variables">
+            <h3 class="variables__title">Переменные</h3>
+            <p class="variables__content">
+              Поддерживаются именованные состояния, но имена состояний, состоящие из одних цифр, считаются целыми числами 
+              (т.е. <code>01</code> и <code>1</code> — это одно и то же). Начальное состояние должно иметь имя <code>0</code>.
+            </p>
+          </article>
+          <article class="process">
+            <h3 class="process__title">Процесс выполнение</h3>
+            <p class="process__content">
+              В процессе работы выполненые команды помечаются цветом. 
+              Сбросить пометки можно в любой момент нажав кнопку "Сбросить метки"
+            </p>
+          </article>
+          <article class="line">
+            <h3 class="line__title">Лента</h3>
+            <p class="line__content">
+              Лента ограничена слева, умолчального пробельного символа не предполагается, старайтесь не забывать его ставить
+            </p>
+          </article>
+          <article class="emulator-commands">
+            <h3 class="emulator-commands__title">Команды эмулятора</h3>
+            <div class="emulator-commands__description">
+              <ul class="emulator-commands__list">
+                <li class="emulator-commands__item">
+                  <button class="emulator-commands__item-button button" disabled>Старт</button>
+                  — разбирает программу и запускает её на выполнение;
+                </li>
+                <li class="emulator-commands__item">
+                  <button class="emulator-commands__item-button button" disabled>Быстро</button>
+                  — запустить программу в быстром, автоматическом режиме. Повторный клик ещё ускоряет работу;
+                </li>
+                <li class="emulator-commands__item">
+                  <button class="emulator-commands__item-button button" disabled>Шаг</button>
+                  — выполнить следующий шаг, при необходимости выйдя из быстрого режима;
+                </li>
+                <li class="emulator-commands__item">
+                  <button class="emulator-commands__item-button button" disabled>Вернуться к правке</button>
+                  — вернуться к редактированию программы и ленты;
+                </li>
+                <li class="emulator-commands__item">
+                  <button class="emulator-commands__item-button button" disabled>В формат TU4</button>
+                  — преобразовать программу в формат эмулятора tu4
+                  (все имена состояний заменить на шестнадцатеричные числа <code>0x00</code> - <code>0xFF</code>).
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="hot-keys">
+            <h3 class="hot-keys__title">Горячие клавиши</h3>
+            <div class="hot-keys__content">
+              <ul class="hot-keys__list">
+                <li class="hot-keys__item">
+                  <kbd>Ctrl</kbd> + <kbd>Enter</kbd> в режиме правки — запуск программы на выполнение
+                  (также можно просто нажать <kbd>Enter</kbd>, если в данный момент в фокусе находится поле ввода ленты);
+                </li>
+                <li class="hot-keys__item">
+                  <kbd>Enter</kbd> или <kbd>Ctrl</kbd> + <kbd>Enter</kbd> в режиме выполнения — включить/выключить быстрый режим;
+                </li>
+                <li class="hot-keys__item">
+                  Пробел в режиме выполнения — выполнить один шаг, при необходимости выйдя из быстрого режима;
+                </li>
+                <li class="hot-keys__item">
+                  <kbd>Esc</kbd> в режиме выполнения — вернуться к редактированию программы и ленты;
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="example">
+            <h3 class="example__title">Пример программы</h3>
+            <div class="example__content">
+              Пример (ненормированная замена <code>0</code> на <code>1</code> и наоборот):
+              <pre>
+                <code>
+                  00, ,&lt;,rep
+                  rep,0,1,mov  rep,1,0,mov  rep, ,&gt;,fin  # переписываем текущую ячейку
+                  mov,0,&lt;,rep  mov,1,&lt;,rep               // двигаемся на шаг влево
+                  fin,0,&gt;,fin  fin,1,&gt;,fin  fin, ,#,fin  # в конце работы перемещаемся в конец слова
+                </code>
+              </pre>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
     <footer>
