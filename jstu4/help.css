@@ -19,7 +19,7 @@ body {
   height: 100%;
   max-width: 800px;
   margin: 0 auto;
-  background-color: #ffffff;
+  background-color: var(--color-white);
 }
 
 .button {
