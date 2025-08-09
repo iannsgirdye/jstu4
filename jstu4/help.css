@@ -26,6 +26,31 @@ body {
   row-gap: 24px;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+section:not(:last-child) {
+  border-bottom: 0.125em solid var(--color-dark-gray);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+article {
+  margin-top: 1.5em;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .button {
   padding: 0.25em 0.5em;
   border: 1px solid var(--color-dark-gray);
@@ -62,21 +87,4 @@ body {
 .header__title {
   font-weight: 700;
   font-size: 24px;
-}
-
-p {
-  margin-top: 15pt;
-  margin-bottom: 5pt;
-}
-
-h2 {
-  margin-top: 20pt;
-  font-size: 14pt;
-  font-weight: bold;
-}
-
-ul {
-  list-style-position: inside;
-  margin-top: 5pt;
-  margin-bottom: 5pt;
 }
