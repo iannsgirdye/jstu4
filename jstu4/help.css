@@ -105,6 +105,11 @@ li::marker {
   content: "⨠  ";
 }
 
+.emulator-commands__list > li:first-child,
+.hot-keys__list > li:first-child {
+  margin-top: 0.5em;
+}
+
 .emulator-commands__list > li:not(:last-child),
 .hot-keys__list > li:not(:last-child) {
   margin-bottom: 0.5em;
@@ -122,9 +127,10 @@ kbd {
   margin-bottom: 3px;
   padding: 0.25em;
   cursor: default;
+  transform: translateY(-1.5px);
 }
 
 kbd:hover {
   box-shadow: none;
-  transform: translateY(3px);
+  transform: translateY(1.5px);
 }
