@@ -79,13 +79,10 @@ h3 {
 
 .header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  column-gap: 24px;
-}
-
-.header__button {
-  font-weight: 400;
+  row-gap: 16px;
 }
 
 .header__title {
