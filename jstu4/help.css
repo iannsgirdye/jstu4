@@ -22,6 +22,28 @@ body {
   background-color: #ffffff;
 }
 
+.button {
+  padding: 0.25em 0.5em;
+  border: 1px solid var(--color-dark-gray);
+  border-radius: 0.5em;
+  background-color: var(--color-gray);
+  text-decoration: none;
+  color: var(--color-dark-gray);
+  font-size: 14px;
+  font-weight: 700;
+  text-wrap: nowrap;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--color-ligth-gray);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
 p {
   margin-top: 15pt;
   margin-bottom: 5pt;
