@@ -78,6 +78,10 @@ kbd:hover {
   transform: translateY(1.5px);
 }
 
+.button, .link {
+  transition-duration: 0.2s;
+}
+
 .button {
   padding: 0.25em 0.5em;
   border: 1px solid var(--color-dark-gray);
@@ -88,7 +92,6 @@ kbd:hover {
   font-size: 14px;
   font-weight: 700;
   text-wrap: nowrap;
-  transition-duration: 0.2s;
   cursor: pointer;
 }
 
@@ -102,6 +105,11 @@ kbd:hover {
 
 .button:disabled {
   transform: none;
+}
+
+.link:hover {
+  color: var(--color-dark-gray);
+  text-decoration: none;
 }
 
 .header {
