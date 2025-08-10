@@ -10,7 +10,6 @@
 html {
   font-family: Arial, sans-serif;
   font-style: normal;
-  font-size: 16px;
   font-weight: 400;
   font-display: swap;
 }
@@ -40,14 +39,19 @@ article {
   margin-top: 1.5em;
 }
 
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 h2 {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 h3 {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 ul {
@@ -60,6 +64,10 @@ li {
 
 li::marker {
   content: "⨠  ";
+}
+
+code, kbd {
+  font-size: 1rem;
 }
 
 kbd {
@@ -89,7 +97,7 @@ kbd:hover {
   background-color: var(--color-gray);
   text-decoration: none;
   color: var(--color-dark-gray);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   text-wrap: nowrap;
   cursor: pointer;
@@ -118,11 +126,6 @@ kbd:hover {
   justify-content: center;
   align-items: center;
   row-gap: 16px;
-}
-
-.header__title {
-  font-weight: 700;
-  font-size: 24px;
 }
 
 .emulator-commands__list > li:first-child,
@@ -155,8 +158,11 @@ kbd:hover {
 
 .example-code__body {
   padding: 0.5em;
-  font-size: 14px;
   margin: -36px 0 -56px -184px;
+}
+
+.example-code__body > pre > code {
+  font-size: 0.875rem;
 }
 
 .footer {
