@@ -144,7 +144,7 @@ kbd:hover {
 
 .example-code {
   margin-top: 0.5em;
-  border: 6px solid var(--color-ligth-gray);
+  border: 6px solid var(--color-gray);
   border-radius: 0.5em;
 }
 
@@ -153,7 +153,7 @@ kbd:hover {
   justify-content: start;
   align-items: start;
   height: 24px;
-  background-color: var(--color-ligth-gray);
+  background-color: var(--color-gray);
 }
 
 .example-code__body {
