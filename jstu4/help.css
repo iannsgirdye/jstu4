@@ -158,11 +158,12 @@ kbd:hover {
 
 .example-code__body {
   padding: 0.5em;
-  margin: -36px 0 -56px -184px;
+  overflow-x: auto;
 }
 
-.example-code__body > pre > code {
+.example-code__body > code {
   font-size: 0.875rem;
+  white-space: pre;
 }
 
 .footer {
