@@ -55,12 +55,12 @@
           <article class="command-format">
             <h3 class="command-format__title">Формат команды</h3>
             <div class="command-format__content">
-              <code>q,a,v,q'</code>, где:
+              <code lang="en">q,a,v,q'</code>, где:
               <ul class="command-format__list">
-                <li class="command-format__item"><code>q</code> — текущее состояние;</li>
-                <li class="command-format__item"><code>a</code> — знак, который видим на ленте;</li>
-                <li class="command-format__item"><code>v</code> — знак, который пишем или команда;</li>
-                <li class="command-format__item"><code>q'</code> — состояние, в которое переходим.</li>
+                <li class="command-format__item"><code lang="en">q</code> — текущее состояние;</li>
+                <li class="command-format__item"><code lang="en">a</code> — знак, который видим на ленте;</li>
+                <li class="command-format__item"><code lang="en">v</code> — знак, который пишем или команда;</li>
+                <li class="command-format__item"><code lang="en">q'</code> — состояние, в которое переходим.</li>
               </ul>
             </div>
           </article>
@@ -68,10 +68,10 @@
             <h3 class="commands-variants__title">Возможные команды</h3>
             <div class="commands-variants__content">
               <ul class="commands-variants__list">
-                <li class="commands-variants__item"><code>&gt;</code> — движение головки вправо;</li>
-                <li class="commands-variants__item"><code>&lt;</code> — движение головки влево;</li>
-                <li class="commands-variants__item"><code>=</code> — отсутствие движения на данном такте;</li>
-                <li class="commands-variants__item"><code>#</code> — полная остановка машины.</li>
+                <li class="commands-variants__item"><code lang="en">&gt;</code> — движение головки вправо;</li>
+                <li class="commands-variants__item"><code lang="en">&lt;</code> — движение головки влево;</li>
+                <li class="commands-variants__item"><code lang="en">=</code> — отсутствие движения на данном такте;</li>
+                <li class="commands-variants__item"><code lang="en">#</code> — полная остановка машины.</li>
               </ul>
             </div>
           </article>
@@ -84,7 +84,7 @@
           <article class="comments">
             <h3 class="comments__title">Комментарии</h3>
             <p class="comments__content">
-              В программу могут быть добавлены комментарии в стиле Си (<code>//</code>)  или shell (<code>#</code>). 
+              В программу могут быть добавлены комментарии в стиле Си (<code lang="en">//</code>)  или shell (<code lang="en">#</code>). 
               Обратите внимание: между предыдущей командой и коментарием должен стоять хотя бы один пробел или перенос строки.
             </p>
           </article>
@@ -92,7 +92,7 @@
             <h3 class="variables__title">Переменные</h3>
             <p class="variables__content">
               Поддерживаются именованные состояния, но имена состояний, состоящие из одних цифр, считаются целыми числами 
-              (т.е. <code>01</code> и <code>1</code> — это одно и то же). Начальное состояние должно иметь имя <code>0</code>.
+              (т.е. <code lang="en">01</code> и <code lang="en">1</code> — это одно и то же). Начальное состояние должно иметь имя <code lang="en">0</code>.
             </p>
           </article>
           <article class="process">
@@ -131,7 +131,7 @@
                 <li class="emulator-commands__item">
                   <button class="emulator-commands__item-button button" disabled>В формат TU4</button>
                   — преобразовать программу в формат эмулятора tu4
-                  (все имена состояний заменить на шестнадцатеричные числа <code>0x00</code> - <code>0xFF</code>).
+                  (все имена состояний заменить на шестнадцатеричные числа <code lang="en">0x00</code> - <code lang="en">0xFF</code>).
                 </li>
               </ul>
             </div>
@@ -141,17 +141,17 @@
             <div class="hot-keys__content">
               <ul class="hot-keys__list">
                 <li class="hot-keys__item">
-                  <kbd>Ctrl</kbd> + <kbd>Enter</kbd> в режиме правки — запуск программы на выполнение<br/>
-                  (также можно просто нажать <kbd>Enter</kbd>, если в данный момент в фокусе находится поле ввода ленты);
+                  <kbd lang="en">Ctrl</kbd> + <kbd lang="en">Enter</kbd> в режиме правки — запуск программы на выполнение<br/>
+                  (также можно просто нажать <kbd lang="en">Enter</kbd>, если в данный момент в фокусе находится поле ввода ленты);
                 </li>
                 <li class="hot-keys__item">
-                  <kbd>Enter</kbd> или <kbd>Ctrl</kbd> + <kbd>Enter</kbd> в режиме выполнения — включить/выключить быстрый режим;
+                  <kbd lang="en">Enter</kbd> или <kbd lang="en">Ctrl</kbd> + <kbd lang="en">Enter</kbd> в режиме выполнения — включить/выключить быстрый режим;
                 </li>
                 <li class="hot-keys__item">
                   Пробел в режиме выполнения — выполнить один шаг, при необходимости выйдя из быстрого режима;
                 </li>
                 <li class="hot-keys__item">
-                  <kbd>Esc</kbd> в режиме выполнения — вернуться к редактированию программы и ленты;
+                  <kbd lang="en">Esc</kbd> в режиме выполнения — вернуться к редактированию программы и ленты;
                 </li>
               </ul>
             </div>
@@ -159,7 +159,7 @@
           <article class="example">
             <h3 class="example__title">Пример программы</h3>
             <div class="example__content">
-              Ненормированная замена <code>0</code> на <code>1</code> и наоборот:
+              Ненормированная замена <code lang="en">0</code> на <code lang="en">1</code> и наоборот:
               <div class="example-code">
                 <div class="example-code__header">
                   <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,7 +169,7 @@
                   </svg>
                 </div>
                 <div class="example-code__body">                  
-<code>00, ,&lt;,rep
+<code lang="en">00, ,&lt;,rep
 rep,0,1,mov  rep,1,0,mov  rep, ,&gt;,fin  # переписываем текущую ячейку
 mov,0,&lt;,rep  mov,1,&lt;,rep               // двигаемся на шаг влево
 fin,0,&gt;,fin  fin,1,&gt;,fin  fin, ,#,fin  # в конце работы перемещаемся в конец слова</code>
