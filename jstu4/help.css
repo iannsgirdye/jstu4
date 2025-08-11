@@ -15,9 +15,9 @@ html {
 }
 
 body {
-  max-width: 800px;
+  max-width: 824px;
+  padding: 12px;
   margin: 0 auto;
-  padding-block: 12px;
   background-color: var(--color-white);
   display: flex;
   flex-direction: column;
