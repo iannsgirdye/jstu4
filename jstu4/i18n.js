@@ -45,7 +45,7 @@ i18n['en'] = (function() {
     t.templates['warning/notNormal_SrcAltered'] = 'WARN: Source data not retained';
     t.templates['warning/notNormal_Misposition'] = 'WARN: Head should be positioned immediately after the result';
 
-    t.templates['stats'] = 'Code size: <b>{{commandsCount}}</b> transitions. Message length: <b>{{initialDataLength}}</b>. Cells used: <b>{{maxDataLength}}</b>. Actions performed: <b>{{operationsCount}}</b>';
+    t.templates['stats'] = 'Code size: <b>{{commandsCount}}</b> transitions. Message length: <b>{{initialDataLength}}</b>. Cells used: <b>{{maxDataLength}}</b>. Actions performed: <b>{{operationsCount}}</b>.';
 
     return t;
 })();
@@ -86,7 +86,7 @@ i18n['ru'] = (function() {
     t.templates['warning/notNormal_SrcAltered'] = '!!! Затёрты/изменены исходные данные';
     t.templates['warning/notNormal_Misposition'] = '!!! Головка должна останавливаться после результата';
 
-    t.templates['stats'] = 'Команд в программе <b>{{commandsCount}}</b>. Длина исходного сообщения: <b>{{initialDataLength}}</b>. Использовано ячеек: <b>{{maxDataLength}}</b>. Выполнено операций: <b>{{operationsCount}}</b>';
+    t.templates['stats'] = 'Команд в программе: <b>{{commandsCount}}</b>. Длина исходного сообщения: <b>{{initialDataLength}}</b>. Использовано ячеек: <b>{{maxDataLength}}</b>. Выполнено операций: <b>{{operationsCount}}</b>.';
 
     return t;
 })();

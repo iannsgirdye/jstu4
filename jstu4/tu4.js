@@ -77,7 +77,7 @@
 
     }
 
-    TM.version = '2.3.1';
+    TM.version = '2.4';
 
     var TMRun = function(program, tape, q0) {
         tape = tape.replace(/\s*$/, '');
