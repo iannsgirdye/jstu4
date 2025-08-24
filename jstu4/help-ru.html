@@ -1,94 +1,193 @@
 ﻿<!DOCTYPE html>
-<html>
-    <head>
-        <title>Эмулятор машины Тьюринга в четвёрках</title>
-        <link rel="stylesheet" href="help.css"/>
-    </head>
-    <body>
-        <div class="wrapper">
-            <p>
-                <a href="#" onclick="history.back(); return false;">&larr; Вернуться к программе</a>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <title>Эмулятор машины Тьюринга в четвёрках</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="normalize.css"/>
+    <link rel="stylesheet" href="help.css"/>
+  </head>
+  <body>
+    <header class="header">
+      <a class="header__button button" onclick="history.back(); return false;">Вернуться к программе</a>
+      <h1 class="header__title">Эмулятор машины Тьюринга в четвёрках</h1>
+    </header>
+    <main>
+      <section class="about">
+        <h2 class="about__title">О программе</h2>
+        <div class="about__content">
+          <article class="purpose">
+            <h3 class="purpose__title">Назначение</h3>
+            <p class="purpose__content">
+              Данное учебное пособие предназначено для изучения алгоритмической модели "Машина Тьюринга".
+              Приложение представляет собой интерпретатор программ МТ в четвёрках.
             </p>
-
-            <h1>Эмулятор машины Тьюринга в четвёрках</h1>
-
-            <h2>О программе</h2>
-            <p>
-                Данное учебное пособие предназначено для изучения алгоритмической модели "Машина Тьюринга".
-                Приложение представляет собой интерпретатор программ МТ в четвёрках.
+          </article>
+          <article class="resources">
+            <h3 class="resources__title">Автор, репозиторий, лицензия</h3>
+            <p class="resources__content">
+              &copy; Алексей Дубинин<br/>
+              Приложение доступно на <a class="link" href="https://github.com/lxyd/jstu4">GitHub</a><br/>
+              Условия лицензионного соглашения (лицензия MIT) см. в файле <a class="link" href="COPYING-RU">COPYING</a>
             </p>
-            <p>
-                &copy; Алексей Дубинин<br/>
-                Приложение доступно на github: <a href="https://github.com/lxyd/jstu4">https://github.com/lxyd/jstu4</a><br/>
-                Условия лицензионного соглашеия (лицензия MIT) см. в файле <a href="COPYING-RU">COPYING</a>
-            </p>
-
-            <p>
-                Дистрибутив включает в себя следующие сторонние компоненты:
-            </p>
-            <ul>
-                <li><a href="http://jquery.com">jQuery</a> - javascript-фреймворк;</li>
-                <li><a href="https://github.com/lxyd/HotMilk">Hotmilk</a> - органайзер шаблонов, обёртка над шаблонизатором <a href="https://github.com/pvande/Milk">Milk</a>.</li>
-            </ul>
-
-            <hr/>
-
-            <h2>Справка</h2>
-            <p>
-                Формат команды: q,a,v,q'<br/>
-                q - текущее состояние;<br/>
-                a - знак, который видим на ленте;<br/>
-                v - знак, который пишем или команда;<br/>
-                q' - состояние, в которое переходим.<br/>
-            </p>
-
-            <p>
-                Возможные команды МТ:<br/>
-                &gt; - движение головки вправо;<br/>
-                &lt; - движение головки влево;<br/>
-                = - отсутствие движения на данном такте;<br/>
-                # - полная остановка машины.<br/>
-            </p>
-
-            <p>Можно записывать несколько команд в строку, разделяя их одним или несколькими пробелами.</p>
-            <p>
-                В программу могут быть добавлены комментарии в стиле Си (//)  или shell (#). Обратите внимание: между предыдущей командой и коментарием должен стоять хотя бы один пробел или перенос строки.
-            </p>
-
-            <p>Поддерживаются именованные состояния, но имена состояний, состоящие из одних цифр, считаются целыми числами (т.е. 01 и 1 - это одно и то же). Начальное состояние должно иметь имя 0.</p>
-
-            <p>В процессе работы выполненые команды помечаются цветом. Сбросить пометки можно в любой момент нажав кнопку "Сбросить метки"</p>
-
-            <p>Лента ограничена слева, умолчального пробельного символа не предполагается, старайтесь не забывать его ставить</p>
-
-            <p>Команды эмулятора:</p>
-            <ul>
-                <li>"Старт" - разбирает программу и запускает её на выполнение;</li>
-                <li>"Быстро" - запустить программу в быстром, автоматическом режиме. Повторный клик ещё ускоряет работу;</li>
-                <li>"Шаг" - выполнить следующий шаг, при необходимости выйдя из быстрого режима;</li>
-                <li>"Вернуться к правке" - вернуться к редактированию программы и ленты;</li>
-                <li>"В формат TU4" - преобразовать программу в формат эмулятора tu4 (все имена состояний заменить на шестнадцатеричные числа 0x00&nbsp;-&nbsp;0xFF).</li>
-            </ul>
-
-            <p>Горячие клавиши:</p>
-            <ul>
-                <li>Ctrl+Enter в режиме правки - запуск программы на выполнение (также можно просто нажать Enter, если в данный момент в фокусе находится поле ввода ленты);</li>
-                <li>Enter или Ctrl+Enter в режиме выполнения - включить/выключить быстрый режим;</li>
-                <li>Пробел в режиме выполнения - выполнить один шаг, при необходимости выйдя из быстрого режима;</li>
-                <li>Esc в режиме выполнения - вернуться к редактированию программы и ленты;</li>
-            </ul>
-
-            <p>Пример (ненормированная замена 0 на 1 и наоборот):</p>
-            <code>
-                00,&nbsp;,&lt;,rep<br/>
-                rep,0,1,mov&nbsp;&nbsp;rep,1,0,mov&nbsp;&nbsp;rep,&nbsp;,&gt;,fin&nbsp;&nbsp;# переписываем текущую ячейку<br/>
-                mov,0,&lt;,rep&nbsp;&nbsp;mov,1,&lt;,rep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// двигаемся на шаг влево<br/>
-                fin,0,&gt;,fin&nbsp;&nbsp;fin,1,&gt;,fin&nbsp;&nbsp;fin,&nbsp;,#,fin&nbsp;&nbsp;# в конце работы перемещаемся в конец слова
-            </code>
-
-            <p>
-                <a href="#" onclick="history.back(); return false;">&larr; Вернуться к программе</a>
-            </p>
+          </article>
+          <article class="components">
+            <h3 class="components__title">Компоненты</h3>
+            <div class="components__content">
+              Дистрибутив включает в себя следующие сторонние компоненты:
+              <ul class="components__list">
+                <li class="components__item">
+                  <a class="link" href="https://jquery.com">jQuery</a> — javascript-фреймворк;
+                </li>
+                <li class="components__item">
+                  <a class="link" href="https://github.com/lxyd/HotMilk">Hotmilk</a>
+                  — органайзер шаблонов, обёртка над шаблонизатором
+                  <a class="link" href="https://github.com/pvande/Milk">Milk</a>.
+                </li>
+              </ul>
+            </div>
+          </article>
         </div>
-    </body>
+      </section>
+      <section class="wiki">
+        <h2 class="wiki__title">Справка</h2>
+        <div class="wiki__content">
+          <article class="command-format">
+            <h3 class="command-format__title">Формат команды</h3>
+            <div class="command-format__content">
+              <code lang="en">q,a,v,q'</code>, где:
+              <ul class="command-format__list">
+                <li class="command-format__item"><code lang="en">q</code> — текущее состояние;</li>
+                <li class="command-format__item"><code lang="en">a</code> — знак, который видим на ленте;</li>
+                <li class="command-format__item"><code lang="en">v</code> — знак, который пишем или команда;</li>
+                <li class="command-format__item"><code lang="en">q'</code> — состояние, в которое переходим.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="commands-variants">
+            <h3 class="commands-variants__title">Возможные команды</h3>
+            <div class="commands-variants__content">
+              <ul class="commands-variants__list">
+                <li class="commands-variants__item"><code lang="en">&gt;</code> — движение головки вправо;</li>
+                <li class="commands-variants__item"><code lang="en">&lt;</code> — движение головки влево;</li>
+                <li class="commands-variants__item"><code lang="en">=</code> — отсутствие движения на данном такте;</li>
+                <li class="commands-variants__item"><code lang="en">#</code> — полная остановка машины.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="some-commands">
+            <h3 class="some-commands__title">Несколько команд в строке</h3>
+            <p class="some-commands__content">
+              Можно записывать несколько команд в строку, разделяя их одним или несколькими пробелами.
+            </p>
+          </article>
+          <article class="comments">
+            <h3 class="comments__title">Комментарии</h3>
+            <p class="comments__content">
+              В программу могут быть добавлены комментарии в стиле Си (<code lang="en">//</code>)  или shell (<code lang="en">#</code>). 
+              Обратите внимание: между предыдущей командой и коментарием должен стоять хотя бы один пробел или перенос строки.
+            </p>
+          </article>
+          <article class="variables">
+            <h3 class="variables__title">Переменные</h3>
+            <p class="variables__content">
+              Поддерживаются именованные состояния, но имена состояний, состоящие из одних цифр, считаются целыми числами 
+              (т.е. <code lang="en">01</code> и <code lang="en">1</code> — это одно и то же). Начальное состояние должно иметь имя <code lang="en">0</code>.
+            </p>
+          </article>
+          <article class="process">
+            <h3 class="process__title">Процесс выполнения</h3>
+            <p class="process__content">
+              В процессе работы выполненые команды помечаются цветом. 
+              Сбросить пометки можно в любой момент нажав кнопку <button class="process__button button" disabled>Сбросить метки</button>.
+            </p>
+          </article>
+          <article class="line">
+            <h3 class="line__title">Лента</h3>
+            <p class="line__content">
+              Лента ограничена слева, умолчального пробельного символа не предполагается, старайтесь не забывать его ставить
+            </p>
+          </article>
+          <article class="emulator-commands">
+            <h3 class="emulator-commands__title">Команды эмулятора</h3>
+            <div class="emulator-commands__description">
+              <ul class="emulator-commands__list">
+                <li class="emulator-commands__item">
+                  <button class="emulator-commands__item-button button" disabled>Старт</button>
+                  — разбирает программу и запускает её на выполнение;
+                </li>
+                <li class="emulator-commands__item">
+                  <button class="emulator-commands__item-button button" disabled>Быстро</button>
+                  — запустить программу в быстром, автоматическом режиме. Повторный клик ещё ускоряет работу;
+                </li>
+                <li class="emulator-commands__item">
+                  <button class="emulator-commands__item-button button" disabled>Шаг</button>
+                  — выполнить следующий шаг, при необходимости выйдя из быстрого режима;
+                </li>
+                <li class="emulator-commands__item">
+                  <button class="emulator-commands__item-button button" disabled>Вернуться к правке</button>
+                  — вернуться к редактированию программы и ленты;
+                </li>
+                <li class="emulator-commands__item">
+                  <button class="emulator-commands__item-button button" disabled>В формат TU4</button>
+                  — преобразовать программу в формат эмулятора tu4
+                  (все имена состояний заменить на шестнадцатеричные числа <code lang="en">0x00</code> - <code lang="en">0xFF</code>).
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="hot-keys">
+            <h3 class="hot-keys__title">Горячие клавиши</h3>
+            <div class="hot-keys__content">
+              <ul class="hot-keys__list">
+                <li class="hot-keys__item">
+                  <kbd lang="en">Ctrl</kbd> + <kbd lang="en">Enter</kbd> в режиме правки — запуск программы на выполнение<br/>
+                  (также можно просто нажать <kbd lang="en">Enter</kbd>, если в данный момент в фокусе находится поле ввода ленты);
+                </li>
+                <li class="hot-keys__item">
+                  <kbd lang="en">Enter</kbd> или <kbd lang="en">Ctrl</kbd> + <kbd lang="en">Enter</kbd> в режиме выполнения — включить/выключить быстрый режим;
+                </li>
+                <li class="hot-keys__item">
+                  Пробел в режиме выполнения — выполнить один шаг, при необходимости выйдя из быстрого режима;
+                </li>
+                <li class="hot-keys__item">
+                  <kbd lang="en">Esc</kbd> в режиме выполнения — вернуться к редактированию программы и ленты.
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="example">
+            <h3 class="example__title">Пример программы</h3>
+            <div class="example__content">
+              Ненормированная замена <code lang="en">0</code> на <code lang="en">1</code> и наоборот:
+              <div class="example-code">
+                <div class="example-code__header">
+                  <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 7.82959L18.6965 9.35641C20.239 10.7447 21.0103 11.4389 21.0103 12.3296C21.0103 13.2203 20.239 13.9145 18.6965 15.3028L17 16.8296" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                    <path opacity="0.5" d="M13.9868 5L10.0132 19.8297" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M7.00005 7.82959L5.30358 9.35641C3.76102 10.7447 2.98975 11.4389 2.98975 12.3296C2.98975 13.2203 3.76102 13.9145 5.30358 15.3028L7.00005 16.8296" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="example-code__body">                  
+<code lang="en">00, ,&lt;,rep
+rep,0,1,mov  rep,1,0,mov  rep, ,&gt;,fin  # переписываем текущую ячейку
+mov,0,&lt;,rep  mov,1,&lt;,rep               // двигаемся на шаг влево
+fin,0,&gt;,fin  fin,1,&gt;,fin  fin, ,#,fin  # в конце работы перемещаемся в конец слова</code>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__design-author">
+        Обновлённый дизайн интерфейса разработан <a class="link" href="https://github.com/iannsgirdye">iannsgirdye</a>
+      </p>
+      <p class="footer__design-repository">
+        Исходный код доступен на <a class="link" href="https://github.com/iannsgirdye/jstu4">GitHub</a>
+      </p>
+    </footer>
+  </body>
 </html>
